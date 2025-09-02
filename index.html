@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMA - Futurista</title>
+<meta name="EMA" content="width=device-width, initial-scale=1.0">
+<title> E.M.A</title>
 
 <!-- Fuente moderna -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@ nav ul {
 }
 nav ul li {
     position: relative;
-    margin-left: 20px;
+    margin-left: 11px;
 }
 nav ul li a {
     color: #c0e8ff;
@@ -228,26 +228,28 @@ footer {
     color: #00ffae;
 }
 
-/* ===== Botón flotante inferior izquierdo ===== */
+/* ===== Botón flotante ===== */
 .floating-btn {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #00f0ff;
-    color: #001a33;
-    padding: 15px 18px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    text-align: center;
+    background-color: transparent; /* sin fondo */
+    padding: 0; /* sin espacio extra */
+    border-radius: 0; /* sin bordes redondeados */
     z-index: 3000;
-    box-shadow: 0 4px 15px rgba(0,255,255,0.5);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
+
+.floating-btn img {
+    width: 60px;  /* tamaño del ícono */
+    height: 60px;
+    display: block;
+}
+
 .floating-btn:hover {
-    background-color: #00ffae;
     transform: scale(1.2);
-    box-shadow: 0 6px 20px rgba(0,255,255,0.7);
 }
+
 </style>
 </head>
 <body>
@@ -292,15 +294,22 @@ footer {
                         <li>
                             <a href="#">Anemómetro <i class="fa-solid fa-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Manual Anemómetro 1</a></li>
-                                <li><a href="#">Manual Anemómetro 2</a></li>
+                                <li><a href="https://archive.org/download/06201-90-k/05103-90.pdf">05103</a></li>
+                                <li><a href="https://archive.org/download/06201-90-k/05106-90.pdf">05106</a></li>
+				<li><a href="https://archive.org/download/06201-90-k/86106-90.pdf">86106</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">Display <i class="fa-solid fa-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Manual Display 1</a></li>
-                                <li><a href="#">Manual Display 2</a></li>
+                                <li><a href="https://archive.org/download/06201-90-k/06201-90%28K%29.pdf">06201</a></li>
+                                <li><a href="https://archive.org/download/06201-90-k/06206_man.pdf">06206</a></li>
+                            </ul>
+			</li>
+                        <li>
+                            <a href="#"> Banco de Prueba <i class="fa-solid fa-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="https://archive.org/download/06201-90-k/Manual%20Banco%20de%20Prueba%20Anem%C3%B3metro%20Young.pdf">Banco de Prueba</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -325,7 +334,7 @@ footer {
         </li>
 
         <li><a href="https://fran5142.github.io/Mapa-de-estaciones-meteorol-gicas-autom-ticas/">Mapa de Estaciones</a></li>
-        <li><a href="#">Intranet DGTM</a></li>
+
     </ul>
 
     <div class="logo-right">
@@ -351,16 +360,10 @@ footer {
     <div class="slide"><img src="https://picsum.photos/id/1019/900/500" alt="Foto 3"></div>
 </div>
 
-<!-- Botones -->
-<section>
-    <h2>Enlaces de interés</h2>
-    <a href="archivo.pdf" class="btn" download><i class="fa-solid fa-file-pdf"></i> Descargar PDF</a>
-    <a href="archivo.xlsx" class="btn" download><i class="fa-solid fa-file-excel"></i> Descargar Excel</a>
-</section>
 
 <!-- Footer -->
 <footer>
-    &copy; 2025 Proyecto Web Futurista | Desarrollado por Cabos 2º (Met.) Francisco Salas Muñoz
+    &copy; 2025 Proyecto Web | Desarrollado por Cabos 2º (Met.) Francisco Salas Muñoz
 </footer>
 
 <!-- Modal Davis Vantage Pro2 -->
@@ -377,7 +380,7 @@ footer {
 
 <!-- Botón flotante -->
 <a href="https://meteoarmada.directemar.cl/prontus_meteo/site/edic/base/port/inicio.html" target="_blank" class="floating-btn">
-    <img src="https://www.armada.cl/armada/site/artic/20150123/imag/foto_0000000120150123104724.jpg" alt="Icono" style="width: 40px; height: 40px;">
+    <img src="https://archive.org/download/logo-servimet-transparente/LOGO_SERVIMET_TRANSPARENTE.png" alt="Icono" style="width: 80px; height: 100px;">
 </a>
 
 <script>
