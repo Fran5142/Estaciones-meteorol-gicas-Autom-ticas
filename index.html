@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMA - Futurista</title>
+
+<!-- Fuente moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== Body ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(160deg, #001a33, #002b55, #001a33);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ===== Menú ===== */
+nav {
+    background-color: rgba(0,31,63,0.5);
+    backdrop-filter: blur(8px);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,255,255,0.2);
+    border-bottom: 1px solid #004080;
+}
+nav .logo img {
+    height: 110px;
+}
+nav .logo-right img {
+    height: 110px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    position: relative;
+    margin-left: 20px;
+}
+nav ul li a {
+    color: #c0e8ff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover {
+    background-color: #004080;
+    color: #d0e8ff;
+}
+
+/* Submenú */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0,34,68,0.8);
+    min-width: 180px;
+    border-radius: 5px;
+    padding: 0;
+    z-index: 1000;
+}
+nav ul li:hover > ul {
+    display: block;
+}
+nav ul li ul li ul {
+    left: 100%;
+    top: 0;
+}
+nav ul li ul li:hover > ul {
+    display: block;
+}
+
+/* ===== Cabecera ===== */
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00f0ff, #00ffae, #00f0ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ===== Hora ===== */
+.time-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.time-container i {
+    color: #00f0ff;
+    margin-right: 8px;
+}
+
+/* ===== Slideshow ===== */
+.slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+}
+.slide {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    transition: opacity 1s ease-in-out;
+}
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+.slide img {
+    width: 100%;
+    border-radius: 15px;
+    filter: brightness(0.9);
+    transition: transform 0.8s ease;
+}
+.slide.active img {
+    transform: scale(1.02);
+}
+
+/* ===== Botones ===== */
+section {
+    text-align: center;
+    margin: 40px 0;
+}
+a.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 28px;
+    background: rgba(0,240,255,0.2);
+    color: #00f0ff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+a.btn:hover {
+    background: rgba(0,240,255,0.6);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,255,255,0.5);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: #00f0ff;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+    background-color: #001f3f;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    color: #c0e8ff;
+    animation: modalAppear 0.5s ease;
+}
+@keyframes modalAppear {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+.modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.close-modal {
+    color: #00f0ff;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-modal:hover {
+    color: #00ffae;
+}
+
+/* ===== Botón flotante inferior izquierdo ===== */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #00f0ff;
+    color: #001a33;
+    padding: 15px 18px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 3000;
+    box-shadow: 0 4px 15px rgba(0,255,255,0.5);
+    transition: all 0.3s ease;
+}
+.floating-btn:hover {
+    background-color: #00ffae;
+    transform: scale(1.2);
+    box-shadow: 0 6px 20px rgba(0,255,255,0.7);
+}
+</style>
+</head>
+<body>
+
+<!-- Barra superior con menú y submenú -->
+<nav>
+    <div class="logo">
+        <img src="https://archive.org/download/imagen_mejorada_3D/ppp.png" alt="Logo Izquierdo">
+    </div>
+
+    <ul>
+        <li><a href="https://f" target="_blank">Normas</a></li>
+        <li>
+            <a href="#" id="openDavisModal">Davis Vantage Pro 2 <i class="fa-solid fa-chevron-down"></i></a>
+            <ul>
+                <li>
+                    <a href="#">Manuales <i class="fa-solid fa-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="https://archive.org/download/manual-iss-davis-pro-2/Manual%20Consola%20Davis%20Pro%202%20inal%C3%A1mbrica.pdf">Consola Davis Pro2</a></li>
+                        <li><a href="https://archive.org/download/manual-iss-davis-pro-2/Manual%20ISS%20Davis%20Pro%202.pdf">ISS Davis Pro2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">App y Software <i class="fa-solid fa-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="https://archive.org/download/estacionsalas/Cumulus_1_9_4.7z">Cumulus 1.9.4</a></li>
+                        <li><a href="https://archive.org/download/estacionsalas/WL6.0.5FULL.exe.7z">WeatherLink 6.0.5</a></li>
+                        <li><a href="https://archive.org/download/estacionsalas/CP210x_Universal_Windows_Driver.zip">Windows 10 Driver</a></li>
+                        <li><a href="https://archive.org/download/estacionsalas/dotNetFx35setup.7z">Microsoft NET 3.5</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Otros</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Young Marine <i class="fa-solid fa-chevron-down"></i></a>
+            <ul>
+                <li>
+                    <a href="#">Manuales <i class="fa-solid fa-chevron-right"></i></a>
+                    <ul>
+                        <li>
+                            <a href="#">Anemómetro <i class="fa-solid fa-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Manual Anemómetro 1</a></li>
+                                <li><a href="#">Manual Anemómetro 2</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Display <i class="fa-solid fa-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Manual Display 1</a></li>
+                                <li><a href="#">Manual Display 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Calibración <i class="fa-solid fa-chevron-down"></i></a>
+            <ul>
+                <li>
+                    <a href="#">Certificados <i class="fa-solid fa-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="https://archive.org/download/certificado-calibracion_202507/CERTIFICADO%20CALIBRACION%20TEMPERATURA.xls">Temperatura</a></li>
+                        <li><a href="https://archive.org/download/certificado-calibracion_202507/CERTIFICADO%20CALIBRACION%20VIENTO.xls">Viento</a></li>
+                        <li><a href="https://archive.org/download/certificado-calibracion_202507/CERTIFICADO%20CALIBRACION%20PRESION.xls">Presión</a></li>
+                        <li><a href="https://archive.org/download/certificado-calibracion_202507/CERTIFICADO%20CALIBRACION.xls">Certificado</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Normas</a></li>
+            </ul>
+        </li>
+
+        <li><a href="https://fran5142.github.io/Mapa-de-estaciones-meteorol-gicas-autom-ticas/">Mapa de Estaciones</a></li>
+        <li><a href="#">Intranet DGTM</a></li>
+    </ul>
+
+    <div class="logo-right">
+        <img src="https://archive.org/download/imagen_mejorada_3D/LOGO%20METEOPMO.png" alt="Logo Derecho">
+    </div>
+</nav>
+
+<!-- Cabecera -->
+<header>
+    <h1>Estación Meteorológica Automática</h1>
+</header>
+
+<!-- Hora -->
+<div class="time-container">
+    <div><i class="fa-solid fa-clock"></i> Hora Local: <span id="horaLocal"></span></div>
+    <div><i class="fa-solid fa-globe"></i> Hora UTC: <span id="horaUTC"></span></div>
+</div>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+    <div class="slide active"><img src="https://picsum.photos/id/1018/900/500" alt="Foto 1"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1015/900/500" alt="Foto 2"></div>
+    <div class="slide"><img src="https://picsum.photos/id/1019/900/500" alt="Foto 3"></div>
+</div>
+
+<!-- Botones -->
+<section>
+    <h2>Enlaces de interés</h2>
+    <a href="archivo.pdf" class="btn" download><i class="fa-solid fa-file-pdf"></i> Descargar PDF</a>
+    <a href="archivo.xlsx" class="btn" download><i class="fa-solid fa-file-excel"></i> Descargar Excel</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Proyecto Web Futurista | Desarrollado por Cabos 2º (Met.) Francisco Salas Muñoz
+</footer>
+
+<!-- Modal Davis Vantage Pro2 -->
+<div id="davisModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeDavisModal">&times;</span>
+        <h2>Estación Meteorológica Davis Vantage Pro2</h2>
+        <img src="https://www.solargas.cl/wp-content/uploads/2018/11/T2eC16VygE9s7HI7vRBRohyO0w60_12.webp" alt="Davis Pro 2">
+        <p>
+            Características del equipo: Sensor de temperatura, humedad, presión y velocidad de viento. Ideal para estaciones meteorológicas automáticas con conectividad avanzada y registro de datos en tiempo real.
+        </p>
+    </div>
+</div>
+
+<!-- Botón flotante -->
+<a href="https://meteoarmada.directemar.cl/prontus_meteo/site/edic/base/port/inicio.html" target="_blank" class="floating-btn">
+    <img src="https://www.armada.cl/armada/site/artic/20150123/imag/foto_0000000120150123104724.jpg" alt="Icono" style="width: 40px; height: 40px;">
+</a>
+
+<script>
+/* ===== Hora ===== */
+function actualizarHora() {
+    const ahora = new Date();
+    document.getElementById("horaLocal").textContent = ahora.toLocaleTimeString();
+    document.getElementById("horaUTC").textContent = ahora.toLocaleTimeString('en-GB', { hour12: false, timeZone: 'UTC' });
+}
+setInterval(actualizarHora, 1000);
+actualizarHora();
+
+/* ===== Slideshow ===== */
+let indice = 0;
+function mostrarSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
+    indice++;
+    if (indice > slides.length) indice = 1;
+    slides[indice-1].classList.add("active");
+    setTimeout(mostrarSlides, 3000);
+}
+mostrarSlides();
+
+/* ===== Modal ===== */
+const openDavisModal = document.getElementById("openDavisModal");
+const davisModal = document.getElementById("davisModal");
+const closeDavisModal = document.getElementById("closeDavisModal");
+
+openDavisModal.onclick = function(event) {
+    event.preventDefault(); // evita que el clic afecte al submenú
+    davisModal.style.display = "block";
+}
+closeDavisModal.onclick = function() {
+    davisModal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == davisModal) {
+        davisModal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
