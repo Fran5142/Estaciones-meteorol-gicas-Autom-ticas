@@ -233,15 +233,15 @@ footer {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: transparent; /* sin fondo */
-    padding: 0; /* sin espacio extra */
-    border-radius: 0; /* sin bordes redondeados */
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
     z-index: 3000;
     transition: transform 0.3s ease;
 }
 
 .floating-btn img {
-    width: 60px;  /* tamaño del ícono */
+    width: 60px;
     height: 60px;
     display: block;
 }
@@ -286,17 +286,17 @@ footer {
         </li>
 
         <li>
-            <a href="#">Young Marine <i class="fa-solid fa-chevron-down"></i></a>
+            <a href="#" id="openYoungModal">Young Marine <i class="fa-solid fa-chevron-right"></i></a>
             <ul>
                 <li>
-                    <a href="#">Manuales <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#">Manuales <i class="fa-solid fa-chevron-down"></i></a>
                     <ul>
                         <li>
                             <a href="#">Anemómetro <i class="fa-solid fa-chevron-right"></i></a>
                             <ul>
                                 <li><a href="https://archive.org/download/06201-90-k/05103-90.pdf">05103</a></li>
                                 <li><a href="https://archive.org/download/06201-90-k/05106-90.pdf">05106</a></li>
-				<li><a href="https://archive.org/download/06201-90-k/86106-90.pdf">86106</a></li>
+                                <li><a href="https://archive.org/download/06201-90-k/86106-90.pdf">86106</a></li>
                             </ul>
                         </li>
                         <li>
@@ -305,9 +305,9 @@ footer {
                                 <li><a href="https://archive.org/download/06201-90-k/06201-90%28K%29.pdf">06201</a></li>
                                 <li><a href="https://archive.org/download/06201-90-k/06206_man.pdf">06206</a></li>
                             </ul>
-			</li>
+                        </li>
                         <li>
-                            <a href="#"> Banco de Prueba <i class="fa-solid fa-chevron-right"></i></a>
+                            <a href="#">Banco de Prueba <i class="fa-solid fa-chevron-right"></i></a>
                             <ul>
                                 <li><a href="https://archive.org/download/06201-90-k/Manual%20Banco%20de%20Prueba%20Anem%C3%B3metro%20Young.pdf">Banco de Prueba</a></li>
                             </ul>
@@ -334,7 +334,6 @@ footer {
         </li>
 
         <li><a href="https://fran5142.github.io/Mapa-de-estaciones-meteorol-gicas-autom-ticas/">Mapa de Estaciones</a></li>
-
     </ul>
 
     <div class="logo-right">
@@ -355,11 +354,14 @@ footer {
 
 <!-- Slideshow -->
 <div class="slideshow-container">
-    <div class="slide active"><img src="https://picsum.photos/id/1018/900/500" alt="Foto 1"></div>
-    <div class="slide"><img src="https://picsum.photos/id/1015/900/500" alt="Foto 2"></div>
-    <div class="slide"><img src="https://picsum.photos/id/1019/900/500" alt="Foto 3"></div>
-</div>
-
+    <div class="slide active"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.50.jpeg" alt="Foto 1"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.48%20%281%29.jpeg" alt="Foto 2"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.49%20%281%29.jpeg" alt="Foto 3"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52%20%281%29.jpeg" alt="Foto 4"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52.jpeg" alt="Foto 5"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53%20%281%29.jpeg"Foto 6"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53%20%282%29.jpeg" alt="Foto 7"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53.jpeg" alt="Foto 8"></div>
 
 <!-- Footer -->
 <footer>
@@ -374,6 +376,19 @@ footer {
         <img src="https://www.solargas.cl/wp-content/uploads/2018/11/T2eC16VygE9s7HI7vRBRohyO0w60_12.webp" alt="Davis Pro 2">
         <p>
             Características del equipo: Sensor de temperatura, humedad, presión y velocidad de viento. Ideal para estaciones meteorológicas automáticas con conectividad avanzada y registro de datos en tiempo real.
+        </p>
+    </div>
+</div>
+
+<!-- Modal Young Marine -->
+<div id="youngModal" class="modal">
+    <div class="modal-content">
+        <span id="closeYoungModal" class="close">&times;</span>
+        <h2>Young Marine</h2>
+        <img src="https://www.youngusa.com/wp-content/uploads/2008/01/05106-600x600.jpg" alt="Young Marine" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <p>
+            El monitor de viento es un sensor de viento de alto rendimiento. 
+	    Su construcción robusta y resistente a la corrosión lo hace ideal para una amplia gama de aplicaciones de medición del viento.
         </p>
     </div>
 </div>
@@ -405,24 +420,41 @@ function mostrarSlides() {
 }
 mostrarSlides();
 
-/* ===== Modal ===== */
+/* ===== Modales ===== */
 const openDavisModal = document.getElementById("openDavisModal");
 const davisModal = document.getElementById("davisModal");
 const closeDavisModal = document.getElementById("closeDavisModal");
 
+const openYoungModal = document.getElementById("openYoungModal");
+const youngModal = document.getElementById("youngModal");
+const closeYoungModal = document.getElementById("closeYoungModal");
+
 openDavisModal.onclick = function(event) {
-    event.preventDefault(); // evita que el clic afecte al submenú
+    event.preventDefault();
     davisModal.style.display = "block";
 }
 closeDavisModal.onclick = function() {
     davisModal.style.display = "none";
 }
+
+openYoungModal.onclick = function(event) {
+    event.preventDefault();
+    youngModal.style.display = "block";
+}
+closeYoungModal.onclick = function() {
+    youngModal.style.display = "none";
+}
+
 window.onclick = function(event) {
     if (event.target == davisModal) {
         davisModal.style.display = "none";
+    }
+    if (event.target == youngModal) {
+        youngModal.style.display = "none";
     }
 }
 </script>
 
 </body>
 </html>
+
