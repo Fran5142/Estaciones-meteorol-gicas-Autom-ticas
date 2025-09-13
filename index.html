@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="EMA" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> E.M.A</title>
 
 <!-- Fuente moderna -->
@@ -116,20 +116,26 @@ h1 {
     margin: 20px 0;
     font-size: 1.3rem;
     font-weight: 500;
+    background: rgba(0,34,68,0.4);
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .time-container i {
     color: #00f0ff;
     margin-right: 8px;
 }
 
-/* ===== Slideshow ===== */
+/* Slideshow */
 .slideshow-container {
-    position: relative;
-    max-width: 900px;
-    margin: 30px auto;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  margin: 30px auto;
 }
 .slide {
     opacity: 0;
@@ -176,13 +182,15 @@ a.btn:hover {
 
 /* ===== Footer ===== */
 footer {
-    margin-top: 40px;
+    margin-top: 80px;
     padding: 20px;
     font-size: 0.9rem;
     background: rgba(255,255,255,0.05);
     border-top: 1px solid rgba(255,255,255,0.2);
     text-align: center;
     color: #00f0ff;
+    position: relative;
+    z-index: 100;
 }
 
 /* ===== Modal ===== */
@@ -239,17 +247,14 @@ footer {
     z-index: 3000;
     transition: transform 0.3s ease;
 }
-
 .floating-btn img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 100px;
     display: block;
 }
-
 .floating-btn:hover {
     transform: scale(1.2);
 }
-
 </style>
 </head>
 <body>
@@ -354,19 +359,13 @@ footer {
 
 <!-- Slideshow -->
 <div class="slideshow-container">
-    <div class="slide active"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.50.jpeg" alt="Foto 1"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.48%20%281%29.jpeg" alt="Foto 2"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.49%20%281%29.jpeg" alt="Foto 3"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52%20%281%29.jpeg" alt="Foto 4"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52.jpeg" alt="Foto 5"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53%20%281%29.jpeg"Foto 6"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53%20%282%29.jpeg" alt="Foto 7"></div>
-    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53.jpeg" alt="Foto 8"></div>
-
-<!-- Footer -->
-<footer>
-    &copy; 2025 Proyecto Web | Desarrollado por Cabos 2º (Met.) Francisco Salas Muñoz
-</footer>
+    <div class="slide active"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.50.jpeg" alt="Estación Foto 1"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.48%20%281%29.jpeg" alt="Estación Foto 2"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.49%20%281%29.jpeg" alt="Estación Foto 3"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52%20%281%29.jpeg" alt="Estación Foto 4"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.52.jpeg" alt="Estación Foto 5"></div>
+    <div class="slide"><img src="https://archive.org/download/whats-app-image-2025-09-04-at-22.20.52/WhatsApp%20Image%202025-09-04%20at%2022.20.53%20%282%29.jpeg" alt="Estación Foto 6"></div>
+</div>
 
 <!-- Modal Davis Vantage Pro2 -->
 <div id="davisModal" class="modal">
@@ -383,7 +382,7 @@ footer {
 <!-- Modal Young Marine -->
 <div id="youngModal" class="modal">
     <div class="modal-content">
-        <span id="closeYoungModal" class="close">&times;</span>
+        <span id="closeYoungModal" class="close-modal">&times;</span>
         <h2>Young Marine</h2>
         <img src="https://www.youngusa.com/wp-content/uploads/2008/01/05106-600x600.jpg" alt="Young Marine" style="max-width: 100%; height: auto; border-radius: 10px;">
         <p>
@@ -395,66 +394,58 @@ footer {
 
 <!-- Botón flotante -->
 <a href="https://meteoarmada.directemar.cl/prontus_meteo/site/edic/base/port/inicio.html" target="_blank" class="floating-btn">
-    <img src="https://archive.org/download/logo-servimet-transparente/LOGO_SERVIMET_TRANSPARENTE.png" alt="Icono" style="width: 80px; height: 100px;">
+    <img src="https://archive.org/download/logo-servimet-transparente/LOGO_SERVIMET_TRANSPARENTE.png" alt="Icono Servimet">
 </a>
 
+<!-- Pie -->
+<footer>
+  Creado por Cabo 2º (Met.) Francisco Salas Muñoz - 26/08/2025 
+</footer>
+
 <script>
-/* ===== Hora ===== */
-function actualizarHora() {
-    const ahora = new Date();
-    document.getElementById("horaLocal").textContent = ahora.toLocaleTimeString();
-    document.getElementById("horaUTC").textContent = ahora.toLocaleTimeString('en-GB', { hour12: false, timeZone: 'UTC' });
+// Actualización de la hora
+function updateTime() {
+    const now = new Date();
+    document.getElementById("horaLocal").textContent = now.toLocaleTimeString();
+    document.getElementById("horaUTC").textContent = now.toUTCString().split(" ")[4];
 }
-setInterval(actualizarHora, 1000);
-actualizarHora();
+setInterval(updateTime, 1000);
+updateTime();
 
-/* ===== Slideshow ===== */
-let indice = 0;
-function mostrarSlides() {
-    let slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
-    indice++;
-    if (indice > slides.length) indice = 1;
-    slides[indice-1].classList.add("active");
-    setTimeout(mostrarSlides, 3000);
+// Slideshow
+let slides = document.querySelectorAll(".slide");
+let currentIndex = 0;
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+    });
 }
-mostrarSlides();
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}, 3000);
 
-/* ===== Modales ===== */
-const openDavisModal = document.getElementById("openDavisModal");
+// Modales
 const davisModal = document.getElementById("davisModal");
-const closeDavisModal = document.getElementById("closeDavisModal");
+const openDavis = document.getElementById("openDavisModal");
+const closeDavis = document.getElementById("closeDavisModal");
 
-const openYoungModal = document.getElementById("openYoungModal");
+openDavis.onclick = e => { e.preventDefault(); davisModal.style.display = "block"; }
+closeDavis.onclick = () => davisModal.style.display = "none";
+
 const youngModal = document.getElementById("youngModal");
-const closeYoungModal = document.getElementById("closeYoungModal");
+const openYoung = document.getElementById("openYoungModal");
+const closeYoung = document.getElementById("closeYoungModal");
 
-openDavisModal.onclick = function(event) {
-    event.preventDefault();
-    davisModal.style.display = "block";
-}
-closeDavisModal.onclick = function() {
-    davisModal.style.display = "none";
-}
+openYoung.onclick = e => { e.preventDefault(); youngModal.style.display = "block"; }
+closeYoung.onclick = () => youngModal.style.display = "none";
 
-openYoungModal.onclick = function(event) {
-    event.preventDefault();
-    youngModal.style.display = "block";
-}
-closeYoungModal.onclick = function() {
-    youngModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == davisModal) {
-        davisModal.style.display = "none";
-    }
-    if (event.target == youngModal) {
-        youngModal.style.display = "none";
-    }
-}
+// Cerrar modal al hacer clic fuera
+window.onclick = e => {
+    if (e.target == davisModal) davisModal.style.display = "none";
+    if (e.target == youngModal) youngModal.style.display = "none";
+};
 </script>
-
 </body>
 </html>
-
